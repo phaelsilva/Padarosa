@@ -50,7 +50,7 @@
             // 
             this.lblSaldacao.AutoSize = true;
             this.lblSaldacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldacao.Location = new System.Drawing.Point(128, 82);
+            this.lblSaldacao.Location = new System.Drawing.Point(45, 118);
             this.lblSaldacao.Name = "lblSaldacao";
             this.lblSaldacao.Size = new System.Drawing.Size(305, 18);
             this.lblSaldacao.TabIndex = 1;
@@ -95,6 +95,7 @@
             this.btnUsuario.TabIndex = 5;
             this.btnUsuario.Text = "Usuários";
             this.btnUsuario.UseVisualStyleBackColor = true;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // MenuPrincipal
             // 
@@ -109,7 +110,9 @@
             this.Controls.Add(this.lblMenu);
             this.Name = "MenuPrincipal";
             this.Opacity = 0.85D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

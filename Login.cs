@@ -32,7 +32,14 @@ namespace Padarosa
                 //Senha correta: Prosseguir..
                 usuario.NomeCompleto = resultado.Rows[0]["nome_completo"].ToString();
                 usuario.Id = (int)resultado.Rows[0]["id"];
-                MessageBox.Show(usuario.NomeCompleto);
+                //Proximo passo abrir a janela menu:
+                MenuPrincipal janela = new MenuPrincipal(usuario);
+                //Esconder a janela atual:
+                Hide();
+                //Mostrar o menu:
+                janela.ShowDialog();
+                //Mostrar o login quando o menu fechar:
+                Show();
             }
             else
             {
@@ -40,6 +47,11 @@ namespace Padarosa
                 MessageBox.Show("Email ou senha incorretas.",
                     "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
